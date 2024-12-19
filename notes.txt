@@ -1,0 +1,21 @@
+SERVER->
+    1- create a noode app using npm init -y
+    2- install express socket.io 
+    3- install cors (for security)
+    4- install nodemon for dev help
+    5- write custom type as module for enabling es6 functionalities
+    7- Whenever we build socket.io servers-> we use HTTP HANDSHAKES to initialise 
+        and set up the server
+    8- we are creating a server named io
+    9- io.on("connection", ()=>{}); this handles the connection
+
+CLIENT-> 
+    1- npm create vite@latest
+    2- create a react app with vite
+    3- install socket.io-client
+
+Description of the Chat app
+-> fullstack chat application
+-> server security enabled using cors
+-> front end built on react using vite
+-> web RTC implemented using socket.io
