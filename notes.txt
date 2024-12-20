@@ -19,3 +19,9 @@ Description of the Chat app
 -> server security enabled using cors
 -> front end built on react using vite
 -> web RTC implemented using socket.io
+
+
+socket.emit -> to send message to a client
+io.emit -> to send a message to the whole server
+socket.broadcast.emit-> to send a message to everyone except the sender (more useful)
+socket.on -> to write reciever handling logic of the emit logic

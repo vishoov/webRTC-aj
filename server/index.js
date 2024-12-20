@@ -23,7 +23,7 @@ app.use(cors({
 }));
 
 app.get("/", (req, res) => {
-    res.send("<h1> Welcome to the chat application built by - AccioJob</h1>");
+    res.send("Welcome to the chat application built by - AccioJob");
 });
 
 
@@ -31,10 +31,12 @@ app.get("/", (req, res) => {
 io.on("connection", (socket)=>{
     console.log("a user has been connect", socket.id);
     
-    socket.on("message", (data)=>{
-        console.log(data);
-        io.emit("message", data);
-    })
+    socket.on("message", ({Room, message})=>{
+        console.log({Room, message});
+        // io.emit("recieve-message", data);
+        socket.to(Room).emit("recieve-message", message);
+    });
+
     
     socket.on("disconnect", ()=>{
         console.log("user disconnected", socket.id);
