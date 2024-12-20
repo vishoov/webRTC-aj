@@ -26,6 +26,9 @@ app.get("/", (req, res) => {
     res.send("Welcome to the chat application built by - AccioJob");
 });
 
+ io.use((socket, next)=>{
+   next();
+ })
 
 //this is a socket function that establishes a live connection
 io.on("connection", (socket)=>{
@@ -37,6 +40,10 @@ io.on("connection", (socket)=>{
         socket.to(Room).emit("recieve-message", message);
     });
 
+    socket.on("join-room", (RoomName)=>{
+        socket.join(RoomName);//  this helps in joining a room//
+        console.log(`user joined ${RoomName}`);
+    });
     
     socket.on("disconnect", ()=>{
         console.log("user disconnected", socket.id);
