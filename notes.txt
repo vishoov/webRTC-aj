@@ -25,3 +25,10 @@ socket.emit -> to send message to a client
 io.emit -> to send a message to the whole server
 socket.broadcast.emit-> to send a message to everyone except the sender (more useful)
 socket.on -> to write reciever handling logic of the emit logic
+
+soocket.to().emit -> it send message to a specified client
+
+
+
+
+every client has a specific ID -> we can create ROOMS-> to enable personal messaging we can create a room and add only one person in it to allow person to person contact 
